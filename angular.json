@@ -1,5 +1,8 @@
 {
   "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
+  "cli": {
+    "analytics": "661b4325-ccb8-443b-a82a-b37e0f39d055"
+  },
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
@@ -27,9 +30,23 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.css"
+              "src/styles.css",
+              "src/assets/css/pages/login/classic/login-6.rtl.css",
+              "src/assets/plugins/global/plugins.bundle.rtl.css",
+              "src/assets/plugins/custom/prismjs/prismjs.bundle.rtl.css",
+              "src/assets/css/style.bundle.rtl.css",
+              "src/assets/css/themes/layout/header/base/light.rtl.css",
+              "src/assets/css/themes/layout/header/menu/light.rtl.css",
+              "src/assets/css/themes/layout/brand/dark.rtl.css",
+              "src/assets/css/themes/layout/aside/dark.rtl.css",
             ],
-            "scripts": []
+            "scripts": [
+              //"src/assets/plugins/global/plugins.bundle.js",
+              //"src/assets/plugins/custom/prismjs/prismjs.bundle.js",
+              //"src/assets/js/scripts.bundle.js",
+              //"src/assets/plugins/custom/fullcalendar/fullcalendar.bundle.js",
+              //"src/assets/js/pages/widgets.js",
+            ]
           },
           "configurations": {
             "production": {

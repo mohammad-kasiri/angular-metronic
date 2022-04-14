@@ -1,0 +1,42 @@
+<div class="d-flex flex-column flex-root">
+  <!--begin::Login-->
+  <div class="login login-6 login-signin-on login-signin-on d-flex flex-row-fluid" id="kt_login">
+    <div class="d-flex flex-column flex-lg-row flex-row-fluid text-center" style="background-image: url(assets/media/bg/bg-3.jpg);">
+      <!--begin:Aside-->
+      <div class="d-flex w-100 flex-center p-15">
+        <div class="login-wrapper">
+          <!--begin:Aside Content-->
+          <div class="text-dark-75">
+            <a href="#">
+              <img src="assets/media/logos/logo-letter-13.png" class="max-h-75px" alt=""/>
+            </a>
+            <h3 class="mb-8 mt-22 font-weight-bold">به انجمن بزرگ ما بپیوندید</h3>
+            <p class="mb-15 text-muted font-weight-bold">
+              قالب مدیریت پیشرفته چارچوب برنامه های وب نسل بعدی
+            </p>
+            <a  [showIfRouteIs]="'/auth/register'" routerLink="/auth/login"      class="btn btn-outline-primary btn-pill py-4 px-9 font-weight-bold">ورود به سیستم</a>
+            <a  [showIfRouteIs]="'/auth/login'"    routerLink="/auth/register"   class="btn btn-outline-primary btn-pill py-4 px-9 font-weight-bold">ساخت اکانت</a>
+          </div>
+          <!--end:Aside Content-->
+        </div>
+      </div>
+      <!--end:Aside-->
+
+      <!--begin:Divider-->
+      <div class="login-divider">
+        <div></div>
+      </div>
+      <!--end:Divider-->
+
+      <!--begin:Content-->
+      <div class="d-flex w-100 flex-center p-15 position-relative overflow-hidden">
+        <div class="login-wrapper">
+          <router-outlet></router-outlet>
+        </div>
+      </div>
+      <!--end:Content-->
+    </div>
+  </div>
+  <!--end::Login-->
+</div>
+<!--end::Main-->

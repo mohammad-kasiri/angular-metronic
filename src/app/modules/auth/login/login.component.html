@@ -1,0 +1,77 @@
+<div class="login-signin">
+  <div class="text-center mb-10 mb-lg-20">
+    <h2 class="font-weight-bold">ورود</h2>
+    <p class="text-muted font-weight-bold">نام کاربری و رمز عبور خود را وارد کنید</p>
+  </div>
+
+  <form class="form text-left" [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+    <! -----------------------------------  Email Input Starts Here ----------------------------------->
+
+    <div class="form-group py-2 m-0">
+      <input
+        formControlName="email"
+        required
+        class="form-control h-auto border-0 px-0 placeholder-dark-75"
+        placeholder="آدرس ایمیل"
+        autocomplete="off">
+
+
+      <small *ngIf="email?.touched && email?.errors?.['email']" class="text-danger">
+        آدرس ایمیل الزامی است
+      </small>
+      <small *ngIf="email?.touched && email?.errors?.['required']" class="text-danger">
+        درس وارد شده معتبر نمی باشد
+      </small>
+    </div>
+
+    <! -----------------------------------Password Input Starts Here----------------------------------->
+    <div class="form-group py-4 border-top m-0">
+      <input
+        formControlName="password"
+        class="form-control h-auto border-0 px-0 placeholder-dark-75"
+        type="password"
+        placeholder="کلمه عبور">
+
+    
+      <small *ngIf="password?.touched && password?.errors?.['required']" class="text-danger">کلمه ی عبور الزامی است</small>
+      <small *ngIf="password?.touched && password?.errors?.['minlength']" class="text-danger"> کلمه ی عبور باید حداقل
+        {{password?.errors?.['minlength'].requiredLength}} کارکتر باشد
+      </small>
+      <small *ngIf="password?.touched && password?.errors?.['maxlength']" class="text-danger"> کلمه ی عبور باید حداکثر
+        {{password?.errors?.['maxlength'].requiredLength}} کارکتر باشد
+      </small>
+      
+    </div>
+
+     <! ------------------------------  Remember Me Check Box Starts Here ------------------------------>
+    <div class="form-group d-flex flex-wrap justify-content-between align-items-center mt-5">
+      <div class="checkbox-inline">
+        <label class="checkbox m-0 text-muted font-weight-bold">
+          <input        
+            type="checkbox"
+            formControlName="remember"
+            name="remember"
+          />
+          <span></span>
+          مرا به خاطر بسپار
+        </label>
+      </div>
+
+
+      <a routerLink="/auth/forget"
+         class="text-muted text-hover-primary font-weight-bold">
+        کلمه عبور را فراموش کرده اید؟
+      </a>
+
+    </div>
+
+    <div class="text-center mt-15">
+      <button
+        class="btn btn-primary btn-pill shadow-sm py-4 px-9 font-weight-bold"
+        [disabled]="!loginForm.valid"
+      >
+        ورود
+      </button>
+    </div>
+  </form>
+</div>
